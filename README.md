@@ -1,4 +1,11 @@
 # weightedRecordBaseball
+<div>
+
+![Python](https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=flat&logo=pandas&logoColor=white)
+![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=flat&logo=microsoft-excel&logoColor=white)
+</div>
+
 
 The weighted record is a new baseball statistic, that I am developing to give a clearer picture of a team's skill. Due to the greater level of inter-division and interleague play present in the MLB (52 games against inter-division teams - 13 games per team, 62 games against inter-league teams, 6 games against 8 inter-league opponents and 7 games against 2 inter-league opponents, 48 games against opposing league teams - 3 games against 14 opposing league teams, 6 games against 1 opposing league team).
 
