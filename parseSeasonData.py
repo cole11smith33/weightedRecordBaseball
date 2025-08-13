@@ -1,87 +1,51 @@
 import csv
-csv_path = ["outputResults/2021results.csv", "outputResults/2022results.csv", "outputResults/2023results.csv", "outputResults/2024results.csv"]
-file_path = ["data/2021_reg_season_results.txt","data/2022_reg_season_results.txt", "data/2023_reg_season_results.txt", "data/2024_reg_season_results.txt"]
-year = [2021, 2022, 2023, 2024]
+csv_path = ["outputResults/2024results.csv", "outputResults/2023results.csv", "outputResults/2022results.csv", "outputResults/2021results.csv"]
+file_path = ["data/2024_reg_season_results.txt", "data/2023_reg_season_results.txt", "data/2022_reg_season_results.txt", "data/2021_reg_season_results.txt"]
 
 #function to parse the line
 #e.g New York Mets (0) @ Atlanta Braves (3) Boxscore becomes New York Mets (0) @ Atlanta Braves (3)     
-def parseLine(parsedLine, i):
+def parseLine(parsedLine):
         #remove unneed whitespace
         parsedLine = parsedLine.strip()
         if "»" in parsedLine:
              return None
         if not parsedLine: # case where line is empty, to clean up data more
              return None
-        if str(year[i]) in parsedLine: # remove lines with the date games were played, to clean up the data more
+        if str(2024 - i) in parsedLine: # remove lines with the date games were played, to clean up the data more
              return None
         parsedLine = parsedLine.replace("Boxscore", "") # removing the filler text on each line of the dataset
-
-        return parseIntoResults(parsedLine, i)
-
+        return parseIntoResults(parsedLine)
 
 # temp code, will make more efficient by avoiding the loop and just using the built-in split function
-def parseIntoResults(parsedLine, i):
-        datapoint = ""
-        mode=0
+def parseIntoResults(parsedLine):
+
         teams = parsedLine.split("@") # New York Mets (0) @ Atlanta Braves (3), by spliting at the @ we get the results of the home and away team seperated
-        for char in teams[0]:
-            if char == "@":
-                continue
-            if char == "(" and mode==0:
-                mode=1 #mean that we have collected our first datapoint 
-                awayTeam=datapoint.strip()
-                datapoint = ""
-                continue
-            if char == ")" and mode==1:
-                awayScore = datapoint
-                awayScore = int(awayScore) 
-                datapoint = ""
-                mode=0
-                continue
-            datapoint = datapoint+char
-        for char in teams[1]:
-            if char == "@":
-                 continue
-            if char == "(" and mode==0:
-                mode=1 #mean that we have collected our first datapoint 
-                homeTeam= datapoint.strip()
-                datapoint = ""
-                continue
-            if char == ")" and mode==1:
-                homeScore = datapoint
-                homeScore = int(homeScore) 
-                datapoint = ""
-                mode=0
-                continue
-            datapoint = datapoint+char
-        addBoxscoreToCSV(awayTeam, awayScore, homeTeam, homeScore, i)
-        return(awayTeam, awayScore, homeTeam, homeScore)
+
+        away_boxscore = teams[0].split("(")
+        home_boxscore = teams[1].split("(")
+
+        away_team = away_boxscore[0].strip()
+        home_team = home_boxscore[0].strip()
+
+        away_score = away_boxscore[1].replace(")", '').strip() #get rid of the extra ')' char and strip all whitespace
+        home_score = home_boxscore[1].replace(")", '').strip()
+
+        addBoxscoreToCSV(away_team, away_score, home_team, home_score)
 
 
-def addBoxscoreToCSV(awayTeam, awayScore, homeTeam, homeScore, i):
-     with open(csv_path[i], "a", newline="") as csvfile:
-        writer = csv.writer(csvfile, delimiter=",")
-        writer.writerow([awayTeam, awayScore, homeTeam, homeScore])
+def addBoxscoreToCSV(awayTeam, awayScore, homeTeam, homeScore):
+    writer.writerow([awayTeam, awayScore, homeTeam, homeScore])
 
 #read file
 for i in range(len(file_path)):
     try:
-        with open(file_path[i], 'r') as seasonData:
+        with open(file_path[i], 'r') as seasonData, open(csv_path[i], "w", newline="") as csvfile:
+            writer = csv.writer(csvfile, delimiter=",")
             #read the seasonData file line by line
             for line in seasonData:
-                result = parseLine(line, i)
-                if result:
-                    print(result)
+                result = parseLine(line)
     except FileNotFoundError: # situation where the file is unable to be located
         print("File " + file_path + "could not be located")
     except Exception as e: # an error not related to file location has occured
         print("Unable to properly read file")
-
-
-#testing purposes
-
-#parseIntoResults("New York Mets (0) @ Atlanta Braves (3)")
-#addBoxscoreToCSV("New York Mets", "0", "Atlanta Braves", "3")
-
-
         
