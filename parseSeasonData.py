@@ -1,6 +1,10 @@
 import csv
-csv_path = ["outputResults/2024results.csv", "outputResults/2023results.csv", "outputResults/2022results.csv", "outputResults/2021results.csv"]
-file_path = ["data/2024_reg_season_results.txt", "data/2023_reg_season_results.txt", "data/2022_reg_season_results.txt", "data/2021_reg_season_results.txt"]
+csv_path = ["outputResults/2024_results.csv", "outputResults/2023_results.csv", "outputResults/2022_results.csv", "outputResults/2021_results.csv",
+            "outputResults/2020_results.csv", "outputResults/2019_results.csv", "outputResults/2018_results.csv", "outputResults/2017_results.csv",
+            "outputResults/2016_results.csv", "outputResults/2015_results.csv", "outputResults/2014_results.csv", "outputResults/2013_results.csv"]
+file_path = ["data/2024_reg_season_results.txt", "data/2023_reg_season_results.txt", "data/2022_reg_season_results.txt", "data/2021_reg_season_results.txt",
+             "data/2020_reg_season_results.txt", "data/2019_reg_season_results.txt", "data/2018_reg_season_results.txt", "data/2017_reg_season_results.txt",
+             "data/2016_reg_season_results.txt", "data/2015_reg_season_results.txt", "data/2014_reg_season_results.txt", "data/2013_reg_season_results.txt"]
 
 #function to parse the line
 #e.g New York Mets (0) @ Atlanta Braves (3) Boxscore becomes New York Mets (0) @ Atlanta Braves (3)     
