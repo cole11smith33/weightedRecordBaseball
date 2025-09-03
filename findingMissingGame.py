@@ -1,7 +1,7 @@
 # I built this file to read the data and find where the missing game was as I had 2429 games in the 2024 regular season instead of the usual 2430 games
 # As I found out, this is because in 2024, a game between the Astros and Guardians was cancelled due to a rain delay, and due to its proximity to the end of the season it was never rescheduled
 import csv
-csv_file = "outputResults/2024results.csv"
+csv_file = "outputResults/2021results.csv"
 
 team_wins = {
 
