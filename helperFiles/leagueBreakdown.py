@@ -16,7 +16,7 @@ team_to_division = {
 
     # American League West
     "Houston Astros": "AL West",
-    "LA Angels of Anaheim": "AL West",  # 2 different spellings for team name in results.csv files
+    "LA Angels of Anaheim": "AL West",  # 2 different spellings for team name in the results.csv files
     "Los Angeles Angels" : " AL West",
     "Oakland Athletics": "AL West",
     "Seattle Mariners": "AL West",
