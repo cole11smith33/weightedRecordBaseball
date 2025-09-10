@@ -46,6 +46,7 @@ for i in range(len(file_path)):
         with open(file_path[i], 'r') as seasonData, open(csv_path[i], "w", newline="") as csvfile:
             writer = csv.writer(csvfile, delimiter=",")
             #read the seasonData file line by line
+            writer.writerow(["Away Team", "Away Score", "Home Team", "Home Score"])
             for line in seasonData:
                 result = parseLine(line)
     except FileNotFoundError: # situation where the file is unable to be located
