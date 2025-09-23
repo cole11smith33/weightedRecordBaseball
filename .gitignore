@@ -2,10 +2,13 @@
 .DS_Store
 
 __pycache__/
+node_modules/
+
 *.log
 *.tmp
 temp/
 settings.json
+package-lock.json
 
 .env
 config.local.js

@@ -1,5 +1,5 @@
 import csv
-csv_path = ["outputResults/2024_results.csv", "outputResults/2023_results.csv", "outputResults/2022_results.csv", "outputResults/2021_results.csv",
+csv_path = ["website/outputResults/2024_results.csv", "outputResults/2023_results.csv", "outputResults/2022_results.csv", "outputResults/2021_results.csv",
             "outputResults/2020_results.csv", "outputResults/2019_results.csv", "outputResults/2018_results.csv", "outputResults/2017_results.csv",
             "outputResults/2016_results.csv", "outputResults/2015_results.csv", "outputResults/2014_results.csv", "outputResults/2013_results.csv"]
 file_path = ["data/2024_reg_season_results.txt", "data/2023_reg_season_results.txt", "data/2022_reg_season_results.txt", "data/2021_reg_season_results.txt",
@@ -30,7 +30,7 @@ def parseIntoResults(parsedLine):
 
         away_team = away_boxscore[0].strip()
         home_team = home_boxscore[0].strip()
-
+ 
         away_score = away_boxscore[1].replace(")", '').strip() #get rid of the extra ')' char and strip all whitespace
         home_score = home_boxscore[1].replace(")", '').strip()
 

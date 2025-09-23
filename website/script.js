@@ -1,5 +1,4 @@
 //Following code was written with chatGPT (only this file)
-
 async function loadCSV(url) {
   const response = await fetch(url);
   const text = await response.text();
@@ -28,7 +27,8 @@ function renderTable(rows, containerId) {
 
 // Load and render when page loads
 document.addEventListener("DOMContentLoaded", () => {
-  loadCSV("2015_results.csv").then(rows => {
+  loadCSV("/results").then(rows => {
     renderTable(rows, "CSVTable");
   });
 });
+
