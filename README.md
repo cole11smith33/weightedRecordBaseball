@@ -19,3 +19,7 @@ This suggests a large skill gap between these two divisions, a divide between th
 This would mean, functionally and statistically the game is skill between these two teams would be much larger than the seasonal record of wins and loses should suggest. We need a method for assigning weighting to the value of a team's wins and loses. Sidenote, the Twins swept the Blue Jays in 2 games, so really anything can happen is baseball.
 
 The first step to see if this is a valid measurement and if this is a statistic that we should put any stake within, is to find which divisions are the strongest. A quick and dirty way to do this is to observe the record for each team in the division for the 110 games they play outside there division. Then sum the records for each team in the division. Finally, we compare the records for each division to each other to find the best and the worst.
+
+Additional platiforms used,
+- Express.js
+- Node.js
