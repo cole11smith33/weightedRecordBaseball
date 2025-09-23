@@ -7,6 +7,8 @@
 ![JavaScript](https://img.shields.io/badge/JAVASCRIPT-323330.svg?&style=flat&logo=javascript&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?&style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?&style=flat&logo=css3&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
 </div>
 
 
@@ -19,7 +21,3 @@ This suggests a large skill gap between these two divisions, a divide between th
 This would mean, functionally and statistically the game is skill between these two teams would be much larger than the seasonal record of wins and loses should suggest. We need a method for assigning weighting to the value of a team's wins and loses. Sidenote, the Twins swept the Blue Jays in 2 games, so really anything can happen is baseball.
 
 The first step to see if this is a valid measurement and if this is a statistic that we should put any stake within, is to find which divisions are the strongest. A quick and dirty way to do this is to observe the record for each team in the division for the 110 games they play outside there division. Then sum the records for each team in the division. Finally, we compare the records for each division to each other to find the best and the worst.
-
-Additional platiforms used,
-- Express.js
-- Node.js
